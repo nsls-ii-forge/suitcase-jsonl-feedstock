@@ -1,0 +1,45 @@
+{% set name = "suitcase-jsonl" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "def2e847c0cd7736504b94b549041c5fc898a29e59005e1ccff1d323b8ca6dba" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - python
+    - event-model >=1.8.0
+    - pip
+    - suitcase-utils
+  run:
+    - python
+    - event-model >=1.8.0
+    - suitcase-utils
+
+test:
+  imports:
+    - suitcase.jsonl
+    - suitcase.jsonl.tests
+
+about:
+  home: https://nsls-ii.github.io/suitcase
+  license: BSD (3-clause)
+  license_family: BSD
+  license_file: LICENSE
+  summary: Export bluesky documents to newline-delimited JSON
+  doc_url: https://nsls-ii.github.io/suitcase
+  dev_url: https://github.com/bluesky/suitcase-jsonl
+
+extra:
+  recipe-maintainers:
+    - NSLS-II
