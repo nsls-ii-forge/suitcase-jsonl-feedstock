@@ -18,9 +18,7 @@ build:
 requirements:
   host:
     - python
-    - event-model >=1.8.0
     - pip
-    - suitcase-utils
   run:
     - python
     - event-model >=1.8.0
