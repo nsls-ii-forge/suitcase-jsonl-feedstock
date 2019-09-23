@@ -3,8 +3,8 @@
 {% set sha256 = "0a3edb2c5fdc5204cec2a7fd9fa3246e70f8021e0963ad8c48d59df6f2022ec4" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
