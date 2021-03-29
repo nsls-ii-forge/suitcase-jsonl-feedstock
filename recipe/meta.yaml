@@ -1,6 +1,6 @@
 {% set name = "suitcase-jsonl" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "0a3edb2c5fdc5204cec2a7fd9fa3246e70f8021e0963ad8c48d59df6f2022ec4" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "dd1fd282d14204b0987cb67272402d5b9276b8e7a66daa88c6a5021c4a8ae2d5" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
